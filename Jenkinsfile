@@ -1,10 +1,7 @@
 pipeline {
     agent any
     tools {nodejs "nodejs"}
-    options {
-         timeout(time: 1, unit: 'HOURS')
-         sendSplunkConsoleLog()
-     }
+    
     stages {
     /*stage('Install Node Modules') {
             steps {
@@ -15,14 +12,14 @@ pipeline {
             steps{
                slackSend channel: '#devops', message: "${env.JOB_NAME}, #${env.BUILD_NUMBER} started"
             }
-        }
+        }*/
           stage('Build') {
             steps {
                 sh 'npm run build'  
             }
         }
         
-        stage('Test'){
+        /*stage('Test'){
             steps{
                 sh 'npm run test'
             }
