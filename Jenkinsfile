@@ -3,7 +3,7 @@ pipeline {
     tools {nodejs "nodejs"}
     
     stages {
-    /*stage('Install Node Modules') {
+    stage('Install Node Modules') {
             steps {
                 sh 'npm install'
             }
@@ -12,18 +12,18 @@ pipeline {
             steps{
                slackSend channel: '#devops', message: "${env.JOB_NAME}, #${env.BUILD_NUMBER} started"
             }
-        }*/
+        }
           stage('Build') {
             steps {
                 sh 'npm run build'  
             }
         }
         
-        /*stage('Test'){
+        stage('Test'){
             steps{
                 sh 'npm run test'
             }
-        }*/
+        }
          stage('Sonar Analysis'){
             steps
             {
