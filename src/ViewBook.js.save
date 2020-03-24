@@ -17,7 +17,7 @@ class ViewBook extends Component{
   state={
     Books:[] ,
     search:"",
-    ipa: "http://139.59.72.137:3001/Books/",
+    ipa: "http://",
     addBookDetails:
     {
       title:'',
